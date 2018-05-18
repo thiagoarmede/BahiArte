@@ -6,10 +6,6 @@ export default class Card extends React.Component {
     render() {
         return (
             <View style={ styles.container }>
-<<<<<<< HEAD
-
-=======
->>>>>>> 805356079a631af5d885b1ea172d3e8b84501ccb
                 <View style={ styles.card }>
                     <ImageBackground style={ styles.imageBackground } source={ this.props.imageUrl }>
                         <View style={ styles.overlayCard }>

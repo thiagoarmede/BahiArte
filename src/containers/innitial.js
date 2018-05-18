@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import Card from '../components/categoriesCard.js';
+import FooterButton from '../components/buttonIndexBottom.js';
 
 import SignupForm from '../components/signup.js';
 
@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'flex-end',
+        bottom: 0,
     },
 });
