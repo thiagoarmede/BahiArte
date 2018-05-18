@@ -27,7 +27,6 @@ export default class App extends React.Component {
 		fontLoaded: false,
     };
 
-
 	async componentWillMount() {
 		try {
 			await Font.loadAsync({
