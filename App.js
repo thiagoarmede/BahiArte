@@ -6,8 +6,8 @@ import FontAwesome
 from './node_modules/@expo/vector-icons/fonts/FontAwesome.ttf';
 import MaterialIcons  
 from './node_modules/@expo/vector-icons/fonts/MaterialIcons.ttf';
-import {} from 'native-base';
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
+import Innitial from "./src/containers/innitial";
 
 styles = StyleSheet.create({
 	headerStyle: {
@@ -36,9 +36,7 @@ export default class App extends React.Component {
     }
   }
 
-
-
-  render() {
+render() {
     if (!this.state.fontLoaded) {
       return <AppLoading />;
     }
@@ -59,7 +57,7 @@ export default class App extends React.Component {
 					<Title>BahiArte</Title>
 				</Body>
           	</Header>
-        	<Text>My App</Text>
+
         </Container>
 		
       </View>
