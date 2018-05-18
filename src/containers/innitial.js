@@ -1,13 +1,12 @@
 import React from 'react';
-import { View, Platform, StatusBar } from 'react-native';
+import { View, Text } from 'react-native';
 
-export default class Innitial extends React.Component {
+export class Innitial extends React.Component {
         
     render() {
-
         return (
-            <View style={{paddingTop: Platform.OS === "ios" ? 0 : StatusBar.currentHeight}}>
-                
+            <View style={{paddingTop: 100}}>
+                <Text>Teste</Text>
             </View>
         );
     }
