@@ -1,31 +1,41 @@
+
 import React from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
-import {observable} from "mobx";
-import {observer} from "mobx-react";
+import { View, Text } from 'react-native';
+import { AppLoading, Font } from 'expo';
 
-@observer
+import FontAwesome  
+from './node_modules/@expo/vector-icons/fonts/FontAwesome.ttf';
+import MaterialIcons  
+from './node_modules/@expo/vector-icons/fonts/MaterialIcons.ttf';
+
 export default class App extends React.Component {
-  @observable text = "";
 
-  handleChange = (event) => {
-    this.text = event;
+  state = {
+    fontLoaded: false
+  };
+
+  async componentWillMount() {
+    try {
+      await Font.loadAsync({
+        FontAwesome,
+        MaterialIcons
+      });
+      this.setState({ fontLoaded: true });
+    } catch (error) {
+      console.log('error loading icon fonts', error);
+    }
   }
 
+
   render() {
+    if (!this.state.fontLoaded) {
+      return <AppLoading />;
+    }
+
     return (
-      <View style={styles.container}>
-        <TextInput onChangeText={this.handleChange} />  
-        <Text>{this.text}</Text>    
+      <View>
+        <Text>My App</Text>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
