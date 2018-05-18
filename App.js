@@ -57,7 +57,7 @@ render() {
 					<Title>BahiArte</Title>
 				</Body>
           	</Header>
-
+			<Innitial/>
         </Container>
 		
       </View>
