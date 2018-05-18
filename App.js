@@ -49,17 +49,18 @@ render() {
 		/>
         <Container>
          	<Header style={styles.headerStyle}>
-				<Left>
-					<Button transparent>
-						<Icon name='menu'/>
-					</Button>
-				</Left>
-				<Body>
-					<Title>BahiArte</Title>
-				</Body>
-          	</Header>
-			<Innitial/>
+            <Left>
+              <Button transparent>
+                <Icon name='menu'/>
+              </Button>
+            </Left>
+            <Body>
+              <Title>BahiArte</Title>
+            </Body>
+          </Header>
+          <Innitial />
         </Container>
+			  
 		
       </View>
     );
