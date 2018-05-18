@@ -9,7 +9,8 @@ export default class Card extends React.Component {
                 <View style={ styles.card }>
                     <ImageBackground style={ styles.imageBackground } source={ require ('../../assets/musica.jpg') }>
                         <View style={ styles.overlayCard }>
-                            <Text style={ styles.textDescription }>Artesanato</Text>
+                            <Text style={ styles.textCategorie }>Artesanatoo</Text>
+                            <Text style={ styles.textDescription }>60 eventos cadastrados</Text>
                         </View>                            
                     </ImageBackground>
                 </View>
@@ -28,18 +29,23 @@ const styles = StyleSheet.create({
         marginTop: 10,
         backgroundColor: 'red',
         borderRadius: 5,
-        height: 100,
+        height: 120,
     },
     overlayCard: {
         flex: 1,
-        backgroundColor: 'rgba(0, 0, 0, 0.5)'   
+        backgroundColor: 'rgba(0, 0, 0, 0.5)', 
 
     },
     imageBackground: {
         flex: 1,
         borderRadius: 5,
     },
+    textCategorie: {
+        color: 'white',
+        fontSize: 16,
+    },
     textDescription: {
         color: 'white',
+        fontSize: 10,
     }
 });

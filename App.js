@@ -67,7 +67,9 @@ export default class App extends React.Component {
                     </Container>
                 </View>
                 <RootStack/>
-            </React.Fragment>            
+                
+            </React.Fragment>     
+                   
         );
     }
 }
