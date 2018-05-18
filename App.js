@@ -11,7 +11,7 @@ import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'nativ
 
 styles = StyleSheet.create({
 	headerStyle: {
-		backgroundColor: "#002141",
+		backgroundColor: "#10375E",
 	} 
 });
 
@@ -59,8 +59,9 @@ export default class App extends React.Component {
 					<Title>BahiArte</Title>
 				</Body>
           	</Header>
+        	<Text>My App</Text>
         </Container>
-        <Text>My App</Text>
+		
       </View>
     );
   }
