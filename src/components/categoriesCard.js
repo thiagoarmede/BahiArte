@@ -6,7 +6,10 @@ export default class Card extends React.Component {
     render() {
         return (
             <View style={ styles.container }>
-                
+                <View style={ styles.card }> 
+                    <Image style={{ flex: 1 }} source={ require ('../../assets/musica.jpg') }/> 
+                    <Text>Música</Text>
+                </View>
 
                 <View style={ styles.card }>
                     <ImageBackground style={ styles.imageBackground } source={ require ('../../assets/musica.jpg') }>
