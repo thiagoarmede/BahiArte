@@ -1,18 +1,14 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import Card from '../components/categoriesCard.js';
+import FooterButton from '../components/buttonIndexBottom.js';
 
 export class Innitial extends React.Component {
         
     render() {
         return (
-<<<<<<< HEAD
-            <Card/>
-=======
-            <View style={{paddingTop: 100}}>
-                <Text>Teste</Text>
+            <View style = { styles.container } >
+                
             </View>
->>>>>>> f054c38caef93c86cb684ab17e7b63f1baf37ea3
         );
     }
 }
@@ -22,6 +18,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'flex-end',
+        bottom: 0,
     },
 });
