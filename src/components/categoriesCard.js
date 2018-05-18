@@ -6,16 +6,12 @@ export default class Card extends React.Component {
     render() {
         return (
             <View style={ styles.container }>
-                <View style={ styles.card }> 
-                    <Image style={{ flex: 1 }} source={ require ('../../assets/musica.jpg') }/> 
-                    <Text>Música</Text>
-                </View>
 
                 <View style={ styles.card }>
-                    <ImageBackground style={ styles.imageBackground } source={ require ('../../assets/musica.jpg') }>
+                    <ImageBackground style={ styles.imageBackground } source={ this.props.imageUrl }>
                         <View style={ styles.overlayCard }>
-                            <Text style={ styles.textCategorie }>Artesanatoo</Text>
-                            <Text style={ styles.textDescription }>60 eventos cadastrados</Text>
+                            <Text style={ styles.textCategorie }>{ this.props.title }</Text>
+                            <Text style={ styles.textDescription }>{ this.props.eventQuantity } ocorrências próximas de você.</Text>
                         </View>                            
                     </ImageBackground>
                 </View>
@@ -30,16 +26,16 @@ const styles = StyleSheet.create({
         marginTop: 60,
     },
     card: {
-        padding: 1,
+        padding: 0,
         marginTop: 10,
         backgroundColor: 'red',
         borderRadius: 5,
-        height: 120,
+        height: 150,
     },
     overlayCard: {
         flex: 1,
         backgroundColor: 'rgba(0, 0, 0, 0.5)', 
-
+        padding: 16,
     },
     imageBackground: {
         flex: 1,
@@ -47,10 +43,10 @@ const styles = StyleSheet.create({
     },
     textCategorie: {
         color: 'white',
-        fontSize: 16,
+        fontSize: 22,
     },
     textDescription: {
         color: 'white',
-        fontSize: 10,
+        fontSize: 16,
     }
 });
