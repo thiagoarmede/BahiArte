@@ -20,7 +20,7 @@ styles = StyleSheet.create({
 });
 
 const RootStack = createStackNavigator({
-    Home: formService,
+    Home: Main,
 });
 
 export default class App extends React.Component {

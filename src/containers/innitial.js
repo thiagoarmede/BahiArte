@@ -6,8 +6,8 @@ export class Innitial extends React.Component {
         
     render() {
         return (
-            <View style = { styles.container } >
-                
+            <View style={{paddingTop: 100}}>
+                <Card/>
             </View>
         );
     }
