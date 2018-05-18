@@ -1,14 +1,12 @@
 import React from 'react';
-import { View, Platform, StatusBar } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import Card from '../components/categoriesCard.js';
 
 export default class Innitial extends React.Component {
         
     render() {
-
         return (
-            <View style={{paddingTop: Platform.OS === "ios" ? 0 : StatusBar.currentHeight}}>
-                
-            </View>
-        );
+            <Card />
+        )
     }
 }
