@@ -8,6 +8,7 @@ import MaterialIcons
 from './node_modules/@expo/vector-icons/fonts/MaterialIcons.ttf';
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
 import Innitial from "./src/containers/innitial";
+import {} from "react-navigation";
 
 styles = StyleSheet.create({
 	headerStyle: {
