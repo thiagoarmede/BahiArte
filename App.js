@@ -7,14 +7,9 @@ from './node_modules/@expo/vector-icons/fonts/FontAwesome.ttf';
 import MaterialIcons  
 from './node_modules/@expo/vector-icons/fonts/MaterialIcons.ttf';
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
-<<<<<<< HEAD
-import Innitial from "./src/containers/innitial";
-
-=======
 import { Innitial } from "./src/containers/innitial";
 import { Main } from "./src/containers/main";
 import { createStackNavigator } from "react-navigation";
->>>>>>> 013ca9e87108fa3ff0bbd532a5d93bc8fa36ba89
 
 styles = StyleSheet.create({
 	headerStyle: {
@@ -31,7 +26,6 @@ export default class App extends React.Component {
 	state = {
 		fontLoaded: false,
     };
-
 
 	async componentWillMount() {
 		try {
@@ -53,30 +47,6 @@ export default class App extends React.Component {
             return <AppLoading />;
         }
 
-<<<<<<< HEAD
-    return (
-      <View style={{paddingTop: Platform.OS === "ios" ? 0 : StatusBar.currentHeight}}>
-	  	<StatusBar
-			backgroundColor="#002141"  
-		  />
-        <Container>
-         	<Header style={styles.headerStyle}>
-				<Left>
-					<Button transparent>
-						<Icon name='menu'/>
-					</Button>
-				</Left>
-				<Body>
-					<Title>BahiArte</Title>
-				</Body>
-          	</Header>
-			<Innitial/>
-        </Container>
-		
-      </View>
-    );
-  }
-=======
         return (
             <React.Fragment>
                 <View style={{paddingTop: Platform.OS === "ios" ? 0 : StatusBar.currentHeight}}>
@@ -100,5 +70,4 @@ export default class App extends React.Component {
             </React.Fragment>            
         );
     }
->>>>>>> 013ca9e87108fa3ff0bbd532a5d93bc8fa36ba89
 }
