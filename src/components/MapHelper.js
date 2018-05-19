@@ -27,7 +27,7 @@ export default class MapHelper extends React.Component {
                     return(
                         <Marker coordinate={{
                             latitude: marker.latitude,
-                            longitude: marker.longitude
+                            longitude: marker.longitude,
                         }} key={i} image={marker.gratuidade ? require("../../assets/bluemarker.png") : require("../../assets/redmarker.png")}/>
                     );
                 })}
