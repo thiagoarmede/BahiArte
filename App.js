@@ -38,7 +38,7 @@ export default class App extends React.Component {
                     });
                     this.setState({ fontLoaded: true });
                 } catch (error) {
-                    console.log('error loading icon fonts', error);
+                    console.log('error loadingPosicao icon fonts', error);
                 }
 	}
 
@@ -64,7 +64,9 @@ export default class App extends React.Component {
                                 <Title>BahiArte</Title>
                             </Body>
                         </Header>
+
                     </Container>
+                    <Innitial />
                 </View>
                 <RootStack/>
                 
