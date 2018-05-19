@@ -26,9 +26,17 @@ export default class MapHelper extends React.Component {
                     }
                     return(
                         <Marker coordinate={{
-                            latitude: marker.latitude,
-                            longitude: marker.longitude,
-                        }} key={i} onPress={() => this.props.onSelectMarker(marker)} image={marker.gratuidade ? require("../../assets/bluemarker.png") : require("../../assets/redmarker.png")}/>
+                                latitude: marker.latitude,
+                                longitude: marker.longitude,
+                            }}  
+                            key={i}
+                            onPress={() => this.props.onSelectMarker(marker)} 
+                            image={this.props.eventType === 'music' 
+                                ? marker.gratuidade ? require('../../assets/bluemarker.png') : require('../../assets/redmarker.png')
+                                : require('../../assets/exhibitionmarker.png')
+                            }
+                        
+                        />
                     );
                 })}
             </MapView>

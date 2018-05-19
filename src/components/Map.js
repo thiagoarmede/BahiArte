@@ -12,6 +12,7 @@ import EventInfo from './eventInfo';
 
 @observer
 export default class Map extends React.Component {
+    eventType = this.props.navigation.getParam('eventType', 'music');
     @observable selectedData = null;
     @observable loadingPosicao = true;
     @observable loadingDatabase = true;
@@ -60,10 +61,12 @@ export default class Map extends React.Component {
 
     fetchDatabase = () => {
         var self = this;
-        firebase.database().ref('musica').once('value').then(function(snapshot) {
-            console.log("Valor: ", snapshot.val());
-            self.estado.markers = _.values(snapshot.val());
-        });
+        if(this.eventType == 'music'){
+            firebase.database().ref('musica').once('value').then(function(snapshot) {
+                console.log("Valor: ", snapshot.val());
+                self.estado.markers = _.values(snapshot.val());
+            });
+        }
         this.loadingDatabase = false;
     }
 
@@ -86,6 +89,7 @@ export default class Map extends React.Component {
                         region={this.estado.region}
                         arrayMarkers={this.estado.markers}
                         onSelectMarker={this.getData}
+                        eventType={this.eventType}
                     />
                    {!this.selectedData 
                         ? <Button onPress={() => this.props.navigation.navigate('SignUp')} style={Style.buttonStyle} >
@@ -122,8 +126,8 @@ export default class Map extends React.Component {
 
 const Style = StyleSheet.create({
     map: {
-        width: 500,
-        height:500,
+        width: "100%",
+        height: "65%",
     },
     buttonStyle: {
         height: 120,
