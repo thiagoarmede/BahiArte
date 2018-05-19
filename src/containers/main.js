@@ -1,11 +1,18 @@
 import React from 'react';
+<<<<<<< HEAD
 import { ScrollView, Text, View, StatusBar, StyleSheet } from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Drawer } from 'native-base';
 import { createStackNavigator, createDrawerNavigator } from "react-navigation";
+=======
+import { ScrollView, Text, View } from 'react-native';
+import Map from '../components/Map'
+import firebase from 'firebase';
+>>>>>>> map
 import Card from "../components/categoriesCard";
 import FooterButton from '../components/buttonIndexBottom';
 
 export class Main extends React.Component {
+<<<<<<< HEAD
         
     styles = StyleSheet.create({
         headerStyle: {
@@ -39,6 +46,36 @@ export class Main extends React.Component {
                 </ScrollView>
                 <FooterButton text="Cadastrar" onPress={() => this.props.navigation.navigate('SignUp')}/>
             </React.Fragment>
+=======
+
+
+    componentWillMount(){
+        const config = {
+            apiKey: "AIzaSyD8qgVEBQWNEFIKBFRC7o20ylHJekUqCeo",
+            authDomain: "bahiarte-44942.firebaseapp.com",
+            databaseURL: "https://bahiarte-44942.firebaseio.com",
+            projectId: "bahiarte-44942",
+            storageBucket: "bahiarte-44942.appspot.com",
+            messagingSenderId: "539607852714"
+        };
+        firebase.initializeApp(config);
+    }
+
+    render() {
+        return (
+            <View>
+                {/*<ScrollView style={{paddingTop: 80}}>*/}
+                    {/*<Card />*/}
+                    {/*<Card />*/}
+                    {/*<Card />*/}
+                    {/*<Card />*/}
+                    {/*<Card />*/}
+                    {/*<Card />*/}
+                    {/*<Card />                    */}
+                {/*</ScrollView>*/}
+                <Map />
+            </View>
+>>>>>>> map
         );
     }
 }
