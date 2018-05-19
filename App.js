@@ -23,19 +23,14 @@ styles = StyleSheet.create({
 	} 
 });
 
-<<<<<<< HEAD
-const RootStack = createStackNavigator({
-    Home: Innitial,
-=======
 const MyDrawer = createDrawerNavigator({
-    Home:{
+    Home: {
         screen: Main
     },
 }, {
     initialRouteName: 'Home',
     contentComponent: DrawerSideBar,
     drawerBackgroundColor: "transparent",
->>>>>>> initialScreen
 });
 
 @observer
