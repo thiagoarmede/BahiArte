@@ -2,7 +2,6 @@ import React from 'react';
 import { ScrollView, Text, View, StatusBar, StyleSheet } from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Drawer } from 'native-base';
 import { createStackNavigator, createDrawerNavigator } from "react-navigation";
-import { ScrollView, Text, View } from 'react-native';
 import Map from '../components/Map'
 import firebase from 'firebase';
 import Card from "../components/categoriesCard";
@@ -45,3 +44,5 @@ export class Main extends React.Component {
         );
     }
 }
+
+console.disableYellowBox = true;
