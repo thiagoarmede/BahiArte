@@ -39,7 +39,7 @@ export class Main extends React.Component {
                     <Card title="Exposições e feiras" imageUrl={require("../../assets/feiras.jpg")} onPress={() => this.props.navigation.navigate('Map', {eventType: 'exhibition'})} />
                     <Card title="Performances" imageUrl={require("../../assets/teatro.jpg")} onPress={() => this.props.navigation.navigate('Map', {eventType: 'theater'})} />
                 </ScrollView>
-                <FooterButton text="Cadastrar" onPress={() => this.props.navigation.navigate('Map', {eventType: 'music'})}/>
+                <FooterButton text="Cadastrar" onPress={() => this.props.navigation.navigate('CadastroEvento', {eventType: 'music'})}/>
             </React.Fragment>
         );
     }
