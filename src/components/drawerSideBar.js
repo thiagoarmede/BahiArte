@@ -13,6 +13,9 @@ export class DrawerSideBar extends React.Component {
                     <Button onPress={() => this.props.navigation.navigate('SignUp')} style={styles.eventButtonStyle} >
                         <Text style={styles.eventButtonTextStyle}>Crie um evento!</Text>
                     </Button>    
+                    <Button onPress={() => this.props.navigation.navigate('Home')} style={styles.eventButtonStyle} >
+                        <Text style={styles.eventButtonTextStyle}>Crie um evento!</Text>
+                    </Button>    
                 </View>                    
                 <Button onPress={() => this.props.navigation.navigate('SignUp')} style={styles.buttonStyle} >
                     <Text style={styles.buttonTextStyle}>Cadastre-se</Text>

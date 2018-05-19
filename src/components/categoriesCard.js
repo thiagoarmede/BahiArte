@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 
-import { View, Text, StyleSheet, Image, ImageBackground, TouchableOpacity } from 'react-native';
+import { View, Button, Text, StyleSheet, Image, ImageBackground, TouchableOpacity } from 'react-native';
 
 export default class Card extends React.Component {
+    
+
     render() {
+        const {onPress} = this.props;
         return (
-            <View style={ styles.container }>
+            <TouchableOpacity onPress={onPress} transparent style={ styles.container }>
                 <View style={ styles.card }>
                     <ImageBackground style={ styles.imageBackground } source={this.props.imageUrl}>
                         <View style={ styles.overlayCard }>
@@ -14,7 +17,7 @@ export default class Card extends React.Component {
                         </View>                            
                     </ImageBackground>
                 </View>
-            </View>
+            </TouchableOpacity>
         );
     }
 }

@@ -10,12 +10,14 @@ import { Container, Header, Left, Body, Right, Button, Icon, Title, Drawer } fro
 import { createStackNavigator, createDrawerNavigator } from "react-navigation";
 import {observable} from 'mobx';
 import {observer} from "mobx-react";
+import firebase from 'firebase';
 
 import { Innitial } from "./src/containers/innitial";
 import { formService } from "./src/containers/formService";
 import { Main } from "./src/containers/main";
 import MainDrawer from "./src/components/mainDrawer";
 import SignUp from "./src/components/signup";
+import Map from "./src/components/Map";
 import {DrawerSideBar} from "./src/components/drawerSideBar";
 
 styles = StyleSheet.create({
@@ -31,6 +33,9 @@ const MyDrawer = createDrawerNavigator({
     SignUp: {
         screen: SignUp
     },
+    Map: {
+        screen: Map
+    },
 }, {
     initialRouteName: 'Home',
     contentComponent: DrawerSideBar,
@@ -44,6 +49,14 @@ export default class App extends React.Component {
     };
 
 	async componentWillMount() {
+        firebase.initializeApp({
+            apiKey: "AIzaSyD8qgVEBQWNEFIKBFRC7o20ylHJekUqCeo",
+            authDomain: "bahiarte-44942.firebaseapp.com",
+            databaseURL: "https://bahiarte-44942.firebaseio.com",
+            projectId: "bahiarte-44942",
+            storageBucket: "bahiarte-44942.appspot.com",
+            messagingSenderId: "539607852714"
+        });
 		try {
 			await Font.loadAsync({
 				FontAwesome,

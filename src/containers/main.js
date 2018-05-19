@@ -2,7 +2,6 @@ import React from 'react';
 import { ScrollView, Text, View, StatusBar, StyleSheet } from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Drawer } from 'native-base';
 import { createStackNavigator, createDrawerNavigator } from "react-navigation";
-import { ScrollView, Text, View } from 'react-native';
 import Map from '../components/Map'
 import firebase from 'firebase';
 import Card from "../components/categoriesCard";
@@ -35,12 +34,12 @@ export class Main extends React.Component {
                     </Header>
                 </View>                    
                 <ScrollView style={{height: '100%', marginBottom: -44}}>
-                    <Card title="Música" imageUrl={require("../../assets/musica.jpg")}/>
-                    <Card title="Artesanato" imageUrl={require("../../assets/artesanato.jpg")} />
-                    <Card title="Exposições e feiras" imageUrl={require("../../assets/feiras.jpg")} />
-                    <Card title="Performances" imageUrl={require("../../assets/teatro.jpg")} />
+                    <Card title="Música" onPress={() => this.props.navigation.navigate('Map')} imageUrl={require("../../assets/musica.jpg")}/>
+                    <Card title="Artesanato" imageUrl={require("../../assets/artesanato.jpg")} onPress={() => this.props.navigation.navigate('Map')} />
+                    <Card title="Exposições e feiras" imageUrl={require("../../assets/feiras.jpg")} onPress={() => this.props.navigation.navigate('Map')} />
+                    <Card title="Performances" imageUrl={require("../../assets/teatro.jpg")} onPress={() => this.props.navigation.navigate('Map')} />
                 </ScrollView>
-                <FooterButton text="Cadastrar" onPress={() => this.props.navigation.navigate('SignUp')}/>
+                <FooterButton text="Cadastrar" onPress={() => this.props.navigation.navigate('Map')}/>
             </React.Fragment>
         );
     }
