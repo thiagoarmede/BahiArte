@@ -9,9 +9,7 @@ export class Innitial extends React.Component {
     render() {
         return (
             
-            
             <SignupForm />
-            
             
         );
     }

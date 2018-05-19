@@ -14,15 +14,6 @@ export default class SignupForm extends React.Component {
 
     render(){
         return(
-            // <View style={ styles.container }>
-            //     <View style={ styles.btnArea }>
-            //         <TouchableOpacity title="Cadastre-se" 
-            //         onPress={this.onPress} 
-            //         >
-            //             <Text style={ styles.btnName }>Clique Aqui</Text>
-            //         </TouchableOpacity>
-            //     </View>
-            // </View>  
 
             <Container>
                 <Header />
@@ -39,29 +30,37 @@ export default class SignupForm extends React.Component {
                     </Item>
                     <Item floatingLabel last>
                         <Label>Senha</Label>
-                        <Input />
+                        <Input secureTextEntry={true}/>
                     </Item>
                 </Form>
                 </Content>
-                <Button style={ styles.btnSignup }>
-                    <Text>Cadastrar</Text>
-                </Button>
+                <View>
+                    <Button style={ styles.btnSignup }>
+                        <Text style={ styles.btnText }>Cadastrar</Text>
+                    </Button>
+                </View>
             </Container>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    container: {
-        
-    },
 
     btnSignup: {
         backgroundColor: '#D30C0F',
+        width: '100%',
+        height: 60,
         marginBottom: 60,
+        paddingLeft: 10,
+        paddingRight: 10, 
     },
 
-    imgBackground: {
-        backgroundColor: 'red',
-    }
+    btnText: {
+        width: '100%',
+        textAlign: 'center',
+        color: 'white',
+        fontSize: 16
+    },
+
+
 });
