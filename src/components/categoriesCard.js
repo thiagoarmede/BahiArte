@@ -13,7 +13,6 @@ export default class Card extends React.Component {
                     <ImageBackground style={ styles.imageBackground } source={this.props.imageUrl}>
                         <View style={ styles.overlayCard }>
                             <Text style={ styles.textCategorie }>{ this.props.title }</Text>
-                            <Text style={ styles.textDescription }>{ this.props.eventQuantity }0 ocorrências próximas de você.</Text>
                         </View>                            
                     </ImageBackground>
                 </View>
