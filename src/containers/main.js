@@ -44,3 +44,5 @@ export class Main extends React.Component {
         );
     }
 }
+
+console.disableYellowBox = true;

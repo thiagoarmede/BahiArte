@@ -12,20 +12,33 @@ export class DrawerSideBar extends React.Component {
                     <Text style={styles.TitleStyle}>BahiArte</Text>
                     <Button onPress={() => this.props.navigation.navigate('SignUp')} style={styles.eventButtonStyle} >
                         <Text style={styles.eventButtonTextStyle}>Crie um evento!</Text>
-                    </Button>    
-                    <Button onPress={() => this.props.navigation.navigate('Home')} style={styles.eventButtonStyle} >
-                        <Text style={styles.eventButtonTextStyle}>Crie um evento!</Text>
-                    </Button>    
-                </View>                    
-                <Button onPress={() => this.props.navigation.navigate('SignUp')} style={styles.buttonStyle} >
-                    <Text style={styles.buttonTextStyle}>Cadastre-se</Text>
-                </Button>                    
+                    </Button>
+                </View>
+                <View style={styles.buttonView}>
+                  <Button onPress={() => this.props.navigation.navigate('Login')} style={styles.loginButtonStyle} >
+                    <Text style={styles.buttonTextStyle}>Login</Text>
+                  </Button>
+                  <Button onPress={() => this.props.navigation.navigate('SignUp')} style={styles.buttonStyle} >
+                      <Text style={styles.buttonTextStyle}>Cadastre-se</Text>
+                  </Button>
+
+                </View>
             </View>            
         );
     }
 }
 
 const styles = StyleSheet.create({
+    loginButtonStyle: {
+      height: 80,
+      backgroundColor: '#0C7AD3',
+      width: "100%",
+      alignItems: 'center',
+    },
+    buttonView: {
+      flex: 1,
+      justifyContent: "flex-end"
+    },
     DrawerStyle: {
         height: "100%",
         width: "100%",
