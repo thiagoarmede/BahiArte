@@ -2,14 +2,16 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import FooterButton from '../components/buttonIndexBottom.js';
 
-import SignupForm from '../components/signup.js';
+import EventInfo from '../components/eventInfo.js';
 
 export class Innitial extends React.Component {
         
     render() {
         return (
             
-            <SignupForm />
+            <View>
+                <EventInfo/>
+            </View>
             
         );
     }
