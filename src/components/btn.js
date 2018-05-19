@@ -5,8 +5,7 @@ import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
 class Btn extends Component {
 	render() {
 		const { text, onPress} = this.props;
-		return (
-      
+		return (      
         <TouchableOpacity style={styles.buttonStyle} onPress={() => onPress()} >
           <Text style={styles.textStyle}>{text}</Text>
         </TouchableOpacity> 
@@ -33,10 +32,6 @@ const styles = StyleSheet.create({
     height: 50,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-
-  btnStyle: {
-    marginTop: 15
   },
 });
 

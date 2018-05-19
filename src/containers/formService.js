@@ -7,14 +7,24 @@ export class formService extends React.Component {
         
     render() {
         return (
+            <React.Fragment>
+            
             <View style = { styles.container } >
-                < InputForm name = "Enter name 1" />
-                < InputForm name = "Enter name 1" />
-                < InputForm name = "Enter name 1" />
-                < InputForm name = "Enter name 1" />
-                < InputForm name = "Enter name 1" />
-                <Btn text="Cadastrar"/>
+                <Text>Serviços</Text>
+                < InputForm name = "Tipo de Serviço" />
+                < InputForm name = "Data" />
+                < InputForm name = "Hora" />
+                < InputForm name = "Cidade" />
+                < InputForm name = "Rua" />    
+                < InputForm name = "Número" / >
             </View>
+            <View style = { styles.containerBtn }>
+                <Btn text="Cadastrar" onPress={() => {
+                    alert("Baby, Alô");
+                }} />
+            </View>
+            </React.Fragment>
+            
         );
     }
 }
@@ -25,6 +35,15 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        top: 60,
+        top: 30,
     },
+
+    containerBtn: {
+        flex: 1,
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        bottom: 20,
+    },
+
 });
