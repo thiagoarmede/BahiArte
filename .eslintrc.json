@@ -3,13 +3,13 @@
         "browser": true,
         "commonjs": true,
         "es6": true,
-        "node": true
+        "node": true,
     },
     "parserOptions": {
         "ecmaFeatures": {
-            "jsx": true
+            "jsx": true,
         },
-        "sourceType": "module"
+        "sourceType": "module",
     },
     "rules": {
         "no-const-assign": "warn",
@@ -18,6 +18,6 @@
         "no-unreachable": "warn",
         "no-unused-vars": "warn",
         "constructor-super": "warn",
-        "valid-typeof": "warn"
+        "valid-typeof": "warn",
     }
 }
