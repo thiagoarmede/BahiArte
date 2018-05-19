@@ -12,7 +12,7 @@ import EventInfo from './eventInfo';
 
 @observer
 export default class Map extends React.Component {
-    eventType = this.props.navigation.getParam('eventType', 'music');
+    @observable eventType = this.props.navigation.getParam('eventType', 'music');
     @observable selectedData = null;
     @observable loadingPosicao = true;
     @observable loadingDatabase = true;
@@ -36,7 +36,7 @@ export default class Map extends React.Component {
     getData = (data) => {
         this.selectedData = {
             title: data.nome_evento,
-            date: data.horario,
+            date: `${data.data} - ${data.horario}`,
             description: data.descricao,
             valor: data.gratuidade,
         }
@@ -63,6 +63,11 @@ export default class Map extends React.Component {
         var self = this;
         if(this.eventType == 'music'){
             firebase.database().ref('musica').once('value').then(function(snapshot) {
+                console.log("Valor: ", snapshot.val());
+                self.estado.markers = _.values(snapshot.val());
+            });
+        } else if(this.eventType == 'exhibition') {
+            firebase.database().ref('exibicoes').once('value').then(function(snapshot) {
                 console.log("Valor: ", snapshot.val());
                 self.estado.markers = _.values(snapshot.val());
             });

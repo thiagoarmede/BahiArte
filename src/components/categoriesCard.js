@@ -8,7 +8,7 @@ export default class Card extends React.Component {
     render() {
         const {onPress} = this.props;
         return (
-            <Button onPress={onPress} transparent style={ styles.container }>
+            <TouchableOpacity onPress={onPress} transparent style={ styles.container }>
                 <View style={ styles.card }>
                     <ImageBackground style={ styles.imageBackground } source={this.props.imageUrl}>
                         <View style={ styles.overlayCard }>
@@ -17,7 +17,7 @@ export default class Card extends React.Component {
                         </View>                            
                     </ImageBackground>
                 </View>
-            </Button>
+            </TouchableOpacity>
         );
     }
 }

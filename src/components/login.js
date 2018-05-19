@@ -29,6 +29,7 @@ export default class Login extends React.Component {
           self.estado.error = false;
           self.estado. preencherCampos = false;
           self.estado.isLoading = false;
+          this.props.navigation.navigate('Home');
         })
         .catch(function(error) {
           self.estado.error = true;

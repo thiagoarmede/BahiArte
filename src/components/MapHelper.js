@@ -4,7 +4,9 @@ import { Dimensions, StyleSheet, Image } from 'react-native'
 import { MapView } from 'expo';
 import { Marker } from 'react-native-maps';
 import { toJS } from 'mobx';
+import { observer } from 'mobx-react';
 
+@observer
 export default class MapHelper extends React.Component {
     render(){
         return(
