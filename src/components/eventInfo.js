@@ -3,15 +3,16 @@ import { View, Text, StyleSheet, Image, ImageBackground } from 'react-native';
 
 export default class EventInfo extends React.Component {
     render(){
+        const {title, date, description, cost} = this.props;
         return(
             <View style={ styles.container }>
                 <View style={ styles.infocard }>                          
                     <Image style={ styles.eventPicture } source={{uri: 'https://portal.ifma.edu.br/wp-content/uploads/2011/06/2011_forro.jpg'}}/>
                     <View style= { styles.eventCard }>
-                        <Text style={ styles.eventTitle }>Forró Pé de Serra</Text>
-                        <Text style={ styles.eventDate }>19/05/2018 - 18:00h até 22:00h</Text>
-                        <Text style={ styles.eventDescription }>Reunião para a galera curtir um som e se divertir ! </Text>
-                        <Text style={ styles.eventCost }>Custo: Grátis!</Text> 
+                        <Text style={ styles.eventTitle }>{title}</Text>
+                        <Text style={ styles.eventDate }>{date}</Text>
+                        <Text style={ styles.eventDescription }>{description}</Text>
+                        <Text style={ styles.eventCost }>Custo: {cost}</Text> 
                     </View>                          
                 </View>   
                    
@@ -22,7 +23,7 @@ export default class EventInfo extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 10,
+        marginTop: -10,
     },
     infocard: {
         backgroundColor: 'rgba(255, 255, 255, 0.5)',

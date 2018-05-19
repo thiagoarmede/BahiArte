@@ -28,7 +28,7 @@ export default class MapHelper extends React.Component {
                         <Marker coordinate={{
                             latitude: marker.latitude,
                             longitude: marker.longitude,
-                        }} key={i} image={marker.gratuidade ? require("../../assets/bluemarker.png") : require("../../assets/redmarker.png")}/>
+                        }} key={i} onPress={() => this.props.onSelectMarker(marker)} image={marker.gratuidade ? require("../../assets/bluemarker.png") : require("../../assets/redmarker.png")}/>
                     );
                 })}
             </MapView>
@@ -39,6 +39,6 @@ export default class MapHelper extends React.Component {
 const Style = StyleSheet.create({
     map: {
         width: 500,
-        height:500,
+        height:480,
     }
 })
