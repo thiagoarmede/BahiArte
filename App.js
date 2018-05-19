@@ -51,19 +51,11 @@ export default class App extends React.Component {
                 Roboto: require("native-base/Fonts/Roboto.ttf"),
                 Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
                 Ionicons: require("@expo/vector-icons/fonts/Ionicons.ttf"),
-<<<<<<< HEAD
             });
             this.setState({ fontLoaded: true });
         } catch (error) {
             console.log('error loading icon fonts', error);
         }
-=======
-                    });
-                    this.setState({ fontLoaded: true });
-                } catch (error) {
-                    console.log('error loadingPosicao icon fonts', error);
-                }
->>>>>>> map
 	}
 
     render() {
@@ -72,34 +64,7 @@ export default class App extends React.Component {
         }
         console.log("teste");
         return (
-<<<<<<< HEAD
             <MyDrawer/>        
-=======
-            <React.Fragment>
-                <View style={{paddingTop: Platform.OS === "ios" ? 0 : StatusBar.currentHeight}}>
-                    <StatusBar
-                        backgroundColor="#002141"  
-                    />
-                    <Container>
-                        <Header style={styles.headerStyle}>
-                            <Left>
-                                <Button transparent>
-                                    <Icon name='menu'/>
-                                </Button>
-                            </Left>
-                            <Body>
-                                <Title>BahiArte</Title>
-                            </Body>
-                        </Header>
-
-                    </Container>
-                    <Innitial />
-                </View>
-                <RootStack/>
-                
-            </React.Fragment>     
-                   
->>>>>>> map
         );
     }
 }
