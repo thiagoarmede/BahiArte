@@ -19,6 +19,7 @@ import SignUp from "./src/components/signup";
 import Map from "./src/components/Map";
 import {DrawerSideBar} from "./src/components/drawerSideBar";
 import Login from './src/components/login'
+import CadastroEvento from './src/components/cadastroEvento';
 
 styles = StyleSheet.create({
 	headerStyle: {
@@ -38,6 +39,9 @@ const MyDrawer = createDrawerNavigator({
     },
     Login: {
       screen: Login
+    },
+    CadastroEvento: {
+        screen: CadastroEvento
     }
 }, {
     initialRouteName: 'Home',
