@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 
-import { View, Text, StyleSheet, Image, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, Image, ImageBackground, TouchableOpacity } from 'react-native';
 
 export default class Card extends React.Component {
     render() {
         return (
             <View style={ styles.container }>
                 <View style={ styles.card }>
-                    <ImageBackground style={ styles.imageBackground } source={ this.props.imageUrl }>
+                    <ImageBackground style={ styles.imageBackground } source={this.props.imageUrl}>
                         <View style={ styles.overlayCard }>
                             <Text style={ styles.textCategorie }>{ this.props.title }</Text>
-                            <Text style={ styles.textDescription }>{ this.props.eventQuantity } ocorrências próximas de você.</Text>
+                            <Text style={ styles.textDescription }>{ this.props.eventQuantity }0 ocorrências próximas de você.</Text>
                         </View>                            
                     </ImageBackground>
                 </View>
-
             </View>
         );
     }
@@ -22,13 +21,10 @@ export default class Card extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 10,
     },
     card: {
         padding: 0,
-        marginTop: 10,
         backgroundColor: 'red',
-        borderRadius: 5,
         height: 150,
     },
     overlayCard: {
@@ -38,7 +34,6 @@ const styles = StyleSheet.create({
     },
     imageBackground: {
         flex: 1,
-        borderRadius: 5,
     },
     textCategorie: {
         color: 'white',
