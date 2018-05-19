@@ -36,20 +36,8 @@ export default class CadastroEvento extends React.Component {
     }
     cadastraEvento = () => {
         var self = this;
-        if(!this.estado.nome || !this.estado.horario  || !this.estado.endereco || !this.estado.descricao  ){
-            this.estado.preencherCampos = true;
-        } else if(this.estado.gratuitoOuPago === "pago"){
-            if(!this.pago){
-                this.estado.preencherPago = true;
-            }
-        } else if (!this.estado.data){
-            this.preencherData = true;
-        } else {
+       
             this.estado.isLoading = true;
-            const emailb64 = b64.encode(firebase.auth().currentuser.email);
-            firebase.database().ref('usuarios/' + emailb64).once('value').then(function(snapshot) {
-                self.estado.nome = snapshot.val().nome;
-            }).then( p => {
                 const rua = self.estado.endereco;
                 const numero = self.estado.numero;
                 axios.get('/https://maps.googleapis.com/maps/api/geocode/json?'+numero+ '&' + rua + 'key=AIzaSyAE5fVa7Ngatvb1D9IStAdPBr')
@@ -59,7 +47,6 @@ export default class CadastroEvento extends React.Component {
                     }).then( e => {
                         firebase.database().ref(self.estado.categoria).push({
                             nome: self.estado.nome,
-                            criador: self.estado.criador,
                             data: self.estado.data,
                             horario: self.estado.horario,
                             gratuitoOuPago: self.estado.gratuitoOuPago,
@@ -74,12 +61,6 @@ export default class CadastroEvento extends React.Component {
                             self.estado.isLoading = false;
                         })
                 })
-            });
-
-
-        }
-
-
     }
 
     abreDatePicker = async () => {
@@ -128,7 +109,7 @@ export default class CadastroEvento extends React.Component {
                     <Content styles={{marginTop: 40}}>
                         <Form>
                             <Item floatingLabel>
-                                <Label>Nome do eventol</Label>
+                                <Label>Nome do evento</Label>
                                 <Input value={this.estado.nome} onChangeText={e => this.estado.nome = e}/>
                             </Item>
                             <View style={{width:"90%",  paddingTop: 20, paddingLeft: 10,}}>
