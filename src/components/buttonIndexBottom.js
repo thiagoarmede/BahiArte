@@ -18,7 +18,7 @@ class FooterButton extends Component {
           }
           start={{x: 0.0, y: 0.0}} end={{x: 0.0, y: 1.0}}
         >
-          <Text style={styles.subStyle}>Quero divulgar meus serviços</Text>          
+          <Text style={styles.subStyle}>Quero divulgar meus serviços!</Text>          
         </LinearGradient>
       </React.Fragment>
 		);
@@ -41,7 +41,8 @@ const styles = StyleSheet.create({
   },
 
   subStyle: {
-    fontSize: 16,
+    marginTop: 10,
+    fontSize: 14,
     color: '#ffffff',
     textAlign: 'center'
   },
@@ -59,6 +60,7 @@ const styles = StyleSheet.create({
     height: 50,
     justifyContent: 'center',
     alignItems: 'center',
+    alignSelf: 'center',
     zIndex: 1
   },
 });

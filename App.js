@@ -14,7 +14,8 @@ import {observer} from "mobx-react";
 import { Innitial } from "./src/containers/innitial";
 import { formService } from "./src/containers/formService";
 import { Main } from "./src/containers/main";
-import MainDrawer from "./src/components/mainDrawer"
+import MainDrawer from "./src/components/mainDrawer";
+import SignUp from "./src/components/signup";
 import {DrawerSideBar} from "./src/components/drawerSideBar";
 
 styles = StyleSheet.create({
@@ -26,6 +27,9 @@ styles = StyleSheet.create({
 const MyDrawer = createDrawerNavigator({
     Home: {
         screen: Main
+    },
+    SignUp: {
+        screen: SignUp
     },
 }, {
     initialRouteName: 'Home',
@@ -58,9 +62,7 @@ export default class App extends React.Component {
         if (!this.state.fontLoaded) {
             return <AppLoading />;
         }
-
         console.log("teste");
-
         return (
             <MyDrawer/>        
         );
