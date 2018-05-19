@@ -34,12 +34,12 @@ export class Main extends React.Component {
                     </Header>
                 </View>                    
                 <ScrollView style={{height: '100%', marginBottom: -44}}>
-                    <Card title="Música" imageUrl={require("../../assets/musica.jpg")}/>
-                    <Card title="Artesanato" imageUrl={require("../../assets/artesanato.jpg")} />
-                    <Card title="Exposições e feiras" imageUrl={require("../../assets/feiras.jpg")} />
-                    <Card title="Performances" imageUrl={require("../../assets/teatro.jpg")} />
+                    <Card title="Música" onPress={() => this.props.navigation.navigate('Map')} imageUrl={require("../../assets/musica.jpg")}/>
+                    <Card title="Artesanato" imageUrl={require("../../assets/artesanato.jpg")} onPress={() => this.props.navigation.navigate('Map')} />
+                    <Card title="Exposições e feiras" imageUrl={require("../../assets/feiras.jpg")} onPress={() => this.props.navigation.navigate('Map')} />
+                    <Card title="Performances" imageUrl={require("../../assets/teatro.jpg")} onPress={() => this.props.navigation.navigate('Map')} />
                 </ScrollView>
-                <FooterButton text="Cadastrar" onPress={() => this.props.navigation.navigate('SignUp')}/>
+                <FooterButton text="Cadastrar" onPress={() => this.props.navigation.navigate('Map')}/>
             </React.Fragment>
         );
     }

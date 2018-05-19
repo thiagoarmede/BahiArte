@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native'
-import { Dimensions, StyleSheet } from 'react-native'
+import { Dimensions, StyleSheet, Image } from 'react-native'
 import { MapView } from 'expo';
 import { Marker } from 'react-native-maps';
 import { toJS } from 'mobx';
@@ -20,7 +20,6 @@ export default class MapHelper extends React.Component {
                 showsUserLocation={true}
             >
                 {toJS(this.props.arrayMarkers).map((marker, i) => {
-                    console.log("Marker: ", marker);
                     const coordinate = {
                         latitude: marker.latitude,
                         longitude: marker.longitude
@@ -28,9 +27,8 @@ export default class MapHelper extends React.Component {
                     return(
                         <Marker coordinate={{
                             latitude: marker.latitude,
-                            longitude: marker.longitude
-                        }}
-                        key={i}/>
+                            longitude: marker.longitude,
+                        }} key={i} image={marker.gratuidade ? require("../../assets/bluemarker.png") : require("../../assets/redmarker.png")}/>
                     );
                 })}
             </MapView>

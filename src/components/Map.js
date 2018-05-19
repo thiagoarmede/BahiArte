@@ -1,14 +1,13 @@
 import React from 'react';
 import { MapView } from 'expo';
-import { StyleSheet, Text , View} from 'react-native'
+import { StyleSheet, Text , View, StatusBar} from 'react-native'
 import { Constants, Location, Permissions } from 'expo';
 import { Spinner } from 'native-base';
+import { Container, Header, Left, Body, Right, Button, Icon, Title, Drawer } from 'native-base';
 import {observable} from 'mobx';
 import {observer} from 'mobx-react';
 import MapHelper from './MapHelper'
 import firebase from 'firebase';
-
-
 
 @observer
 export default class Map extends React.Component {
@@ -67,14 +66,38 @@ export default class Map extends React.Component {
     render(){
         const component = (this.loadingPosicao && this.loadingDatabase) ?
             ( <Spinner color={"blue"} />):
-            (<MapHelper markerInicial={this.estado.markerInicial}
-                region={this.estado.region}
-                arrayMarkers={this.estado.markers}
-            />);
+            (
+                <React.Fragment>
+                    <MapHelper markerInicial={this.estado.markerInicial}
+                        region={this.estado.region}
+                        arrayMarkers={this.estado.markers}
+                    />
+                    <Button onPress={() => this.props.navigation.navigate('SignUp')} style={Style.buttonStyle} >
+                        <Text style={Style.buttonTextStyle}>Selecione um evento!</Text>
+                    </Button>   
+                </React.Fragment>                
+            );
         return (
-            <View >
-                {component}
-            </View>
+            <React.Fragment>
+                <StatusBar
+                    backgroundColor="#002141"  
+                />
+                <View style={{height: 56, paddingTop: StatusBar.currentHeight, marginBottom: 20}}>
+                    <Header style={styles.headerStyle}>
+                        <Left>
+                            <Button style={{width: 100}} onPress={() => this.props.navigation.openDrawer()} transparent>
+                                <Icon name='menu'/>
+                            </Button>
+                        </Left>
+                        <Body>
+                            <Title>BahiArte</Title>
+                        </Body>
+                    </Header>
+                </View> 
+                <View >
+                    {component}
+                </View>
+            </React.Fragment>
         )
     }
 }
@@ -83,5 +106,17 @@ const Style = StyleSheet.create({
     map: {
         width: 500,
         height:500,
-    }
+    },
+    buttonStyle: {
+        height: 120,
+        backgroundColor: '#D30C0F',
+        width: "100%",  
+        alignItems: 'center',
+    },
+    buttonTextStyle: {
+        width: '100%',
+        color: "white",
+        fontSize: 22,
+        textAlign: "center",
+    },
 })

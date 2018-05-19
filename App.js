@@ -16,6 +16,7 @@ import { formService } from "./src/containers/formService";
 import { Main } from "./src/containers/main";
 import MainDrawer from "./src/components/mainDrawer";
 import SignUp from "./src/components/signup";
+import Map from "./src/components/Map";
 import {DrawerSideBar} from "./src/components/drawerSideBar";
 import Login from './src/components/login'
 
@@ -31,6 +32,9 @@ const MyDrawer = createDrawerNavigator({
     },
     SignUp: {
         screen: SignUp
+    },
+    Map: {
+        screen: Map
     },
     Login: {
       screen: Login
